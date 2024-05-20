@@ -7,6 +7,7 @@ import io.matheusvictor.inventoryservice.service.InventoryService;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -16,7 +17,7 @@ public class InventoryServiceImpl implements InventoryService {
 
     @PostConstruct
     private void init() {
-        inventory = Map.of();
+        inventory = new HashMap<>();
         inventory.put(1, 2);
         inventory.put(2, 3);
         inventory.put(3, 4);
