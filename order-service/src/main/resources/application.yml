@@ -1,6 +1,15 @@
 spring:
   application:
     name: order-service
+  cloud:
+    function:
+      definition: supplier;consumer
+    stream:
+      bindings:
+        supplier-out-0:
+          destination: order-created
+        consumer-in-0:
+          destination: order-updated
 
 server:
-  port: 8080
+  port: 8083
